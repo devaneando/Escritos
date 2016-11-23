@@ -2,3 +2,5 @@
 	path = Novels
 	url = git@gitlab.com:devaneando/Novels.git
 	branch = master
+    update = merge
+    ignore = all
