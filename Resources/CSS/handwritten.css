@@ -1,0 +1,95 @@
+/*
+    ▄▄▄▄                                                        █
+    █   ▀▄  ▄▄▄   ▄   ▄   ▄▄▄   ▄ ▄▄    ▄▄▄    ▄▄▄   ▄ ▄▄    ▄▄▄█   ▄▄▄
+    █    █ █▀  █  ▀▄ ▄▀  ▀   █  █▀  █  █▀  █  ▀   █  █▀  █  █▀ ▀█  █▀ ▀█
+    █    █ █▀▀▀▀   █▄█   ▄▀▀▀█  █   █  █▀▀▀▀  ▄▀▀▀█  █   █  █   █  █   █
+    █▄▄▄▀  ▀█▄▄▀    █    ▀▄▄▀█  █   █  ▀█▄▄▀  ▀▄▄▀█  █   █  ▀█▄██  ▀█▄█▀
+
+    Created on : Nov 17, 2016, 2:44:37 PM
+    Author     : Eduardo Fernandes
+*/
+
+@import url('base.css');
+@import url('https://fonts.googleapis.com/css?family=Caveat|EB+Garamond|Open+Sans');
+
+
+/* ########## Html, Body & containers ##### */
+
+body{
+    /* Text formatting */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ########## Headers ##### */
+
+h1, h2, h3, h4, h5, h6{
+    /* Text formatting */
+    font-family: 'Caveat', cursive;
+}
+
+h1{
+    /* Color and styling */
+    color: #4B0082;
+}
+
+h2{
+    /* Color and styling */
+    border-bottom: solid #800080 1px;
+    color: #800080;
+}
+
+h3{
+    /* Color and styling */
+    color: #9932CC;
+}
+
+h4{
+    /* Color and styling */
+    color: #8A2BE2;
+}
+
+h5{
+    /* Color and styling */
+    color: #BA55D3;
+}
+
+h6{
+    /* Color and styling */
+    color: #EE82EE;
+}
+
+
+/* ########## Links ##### */
+
+a, a:active, a:visited{
+    /* Color and styling */
+    color: #8A2BE2;
+}
+
+a:hover{
+    /* Color and styling */
+    color: #8A2BE2;
+}
+
+/* ########## Footnote ##### */
+
+.footnote-ref, .footnote-ref:active, .footnote-ref:visited{
+    /* Color and styling */
+    color: #8A2BE2;
+}
+
+.footnote-ref:hover{
+    /* Color and styling */
+    color: #8A2BE2;
+}
+
+@media print {
+
+    /* ########## Html, Body & containers ##### */
+
+    body{
+        /* Text formatting */
+        font-family: 'EB Garamond', serif;
+    }
+
+}

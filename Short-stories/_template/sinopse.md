@@ -1,0 +1,5 @@
+# «novelName»
+
+## Sinopse
+
+«yourStorylineHere»
