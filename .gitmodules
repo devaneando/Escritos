@@ -1,0 +1,4 @@
+[submodule "Novels"]
+	path = Novels
+	url = git@gitlab.com:devaneando/Novels.git
+	branch = master
