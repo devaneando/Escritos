@@ -178,3 +178,17 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Other documents
+pickled_dict
+*.html
+*.doc
+*.docx
+
+# Compressed files
+*.7z
+*.rar
+*.tar.gz
+*.tgz
+*.zip
+
