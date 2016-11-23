@@ -1,6 +1,4 @@
 # Escritos
-Meus artigos, crônicas, ensaios e contos
-## Escritos
 
 This repository is where I keep my personal writings, mostly written in Portuguese.
 
