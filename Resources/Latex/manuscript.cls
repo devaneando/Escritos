@@ -36,6 +36,11 @@
 % Allows String comparation
 \usepackage{etoolbox}
 
+% Citations
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\DeclareLanguageMapping{brazilian}{brazilian-apa}
+
 % Better quality fonts for PS generation
 \usepackage{ae,aecompl}
 
