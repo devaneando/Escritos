@@ -1,0 +1,76 @@
+% ▄▄▄▄                                                        █
+% █   ▀▄  ▄▄▄   ▄   ▄   ▄▄▄   ▄ ▄▄    ▄▄▄    ▄▄▄   ▄ ▄▄    ▄▄▄█   ▄▄▄
+% █    █ █▀  █  ▀▄ ▄▀  ▀   █  █▀  █  █▀  █  ▀   █  █▀  █  █▀ ▀█  █▀ ▀█
+% █    █ █▀▀▀▀   █▄█   ▄▀▀▀█  █   █  █▀▀▀▀  ▄▀▀▀█  █   █  █   █  █   █
+% █▄▄▄▀  ▀█▄▄▀    █    ▀▄▄▀█  █   █  ▀█▄▄▀  ▀▄▄▀█  █   █  ▀█▄██  ▀█▄█▀
+%
+% creativeWriting.sty
+% Copyright 2016 Eduardo Fernandes <edu.fernandes.pt@gmail.com>
+%
+% Licensed under a Creative Commons Attribution 4.0 International License.
+% See https://creativecommons.org/licenses/by/4.0/
+%
+% Example:
+% \usepackage{creativeWriting}
+%
+% Package definition
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{creativeWriting}[2016/11/28 creativeWriting]
+
+% Allows the use of conditionals
+\usepackage{ifthen}
+
+% Defines the character's name
+% \charName{John Doe}
+\newcommand{\charName}[1]{\def\@charName{#1}}
+
+% Defines the city and date of birth
+% \charBirth{Rio de Janeiro, October 14, 2016}
+\newcommand{\charBirth}[1]{\def\@charBirth{#1}}
+
+% Defines the city and date of death
+% \charBirth{São Paulo, March 28, 2053}
+\newcommand{\charDeath}[1]{\def\@charDeath{#1}}
+
+% Defines the character's abstract
+% \charAbstract{is a violent marauder, ready to kill anyone on sight.}
+\newcommand{\charAbstract}[1]{\def\@charAbstract{#1}}
+
+\newcommand{\keywords}[1]{
+    {
+    \tiny\textbf{Palavras chaves}: \textit{#1}
+    }
+    
+}
+
+% Outputs the character's abstract according to the following format
+% \textbf{\@charName} (\textit{\@charBirth} --- \textit{\@charDeath}) \@charAbstract
+\newcommand{\makeCharAbstract}{
+    {
+    \tiny\ifthenelse{\isundefined\@charName}{}{\textbf{\@charName}}
+    \ifthenelse{\isundefined\@charBirth}{(}{(\textit{\@charBirth}}
+    { --- }
+    \ifthenelse{\isundefined\@charDeath}{)}{\textit{\@charDeath})}
+    \ifthenelse{\isundefined\@charAbstract}{}{ \@charAbstract}
+    }
+    
+}
+
+% Formats a dialogue excert of text, appending the necessary dashes
+% The first parameter -- optional -- indicates the dash position and can be l(eft), r(ight) and b(oth).
+% The second parameter is what the characte is speaking.
+% \speak[b]{Kill them all!}
+\newcommand{\speak}[2][l]{
+    \ifthenelse{\equal{#1}{l}}{--- #2}
+    {\ifthenelse{\equal{#1}{b}}{--- #2 ---}{#2 ---}}
+}
+
+% Formats a think excert of text, appending the necessary dashes
+% The first parameter -- optional -- indicates the dash position and can be l(eft), r(ight) and b(oth).
+% The second parameter is what the characte is thinking.
+% \think[b]{What should I do?}
+\newcommand{\think}[2][l]{
+    \ifthenelse{\equal{#1}{l}}{--- \textit{``#2``}}
+    {\ifthenelse{\equal{#1}{b}}{--- \textit{``#2``} ---}{\textit{``#2``} ---}}
+}
