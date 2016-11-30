@@ -21,9 +21,24 @@
 % Allows the use of conditionals
 \usepackage{ifthen}
 
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+
+% Allows image insertion
+\usepackage{graphicx,wrapfig}
+\graphicspath{ {Images/} }
+
 % Defines the character's name
-% \charName{John Doe}
+% \charName{John Somebody Doe}
 \newcommand{\charName}[1]{\def\@charName{#1}}
+
+% Defines the character's short name
+% \charName{John Doe}
+\newcommand{\charNickname}[1]{\def\@charNickname{#1}}
+
+% Defines the character's avatar without the extension, the image ued for reference
+% \charAvatar{john-doe}
+\newcommand{\charAvatar}[1]{\def\@charAvatar{#1}}
 
 % Defines the city and date of birth
 % \charBirth{Rio de Janeiro, October 14, 2016}
@@ -37,25 +52,40 @@
 % \charAbstract{is a violent marauder, ready to kill anyone on sight.}
 \newcommand{\charAbstract}[1]{\def\@charAbstract{#1}}
 
-\newcommand{\keywords}[1]{
-    {
-    \tiny\textbf{Palavras chaves}: \textit{#1}
-    }
-    
-}
-
 % Outputs the character's abstract according to the following format
 % \textbf{\@charName} (\textit{\@charBirth} --- \textit{\@charDeath}) \@charAbstract
 \newcommand{\makeCharAbstract}{
-    {
-    \tiny\ifthenelse{\isundefined\@charName}{}{\textbf{\@charName}}
-    \ifthenelse{\isundefined\@charBirth}{(}{(\textit{\@charBirth}}
-    { --- }
-    \ifthenelse{\isundefined\@charDeath}{)}{\textit{\@charDeath})}
-    \ifthenelse{\isundefined\@charAbstract}{}{ \@charAbstract}
+
+	% Prints the section title
+    \ifthenelse{\isundefined\@charNickname}
+		{\section*{\@charName}}
+		{\section*{\@charNickname}}
+    % Prints the character's avatar
+    \ifthenelse{\isundefined\@charAvatar}{}{
+        \begin{multicols}{2}
+            \be      
+            % Prints the abstract
+            \ifthenelse{\isundefined\@charNickname}
+            {\textbf{\@charName} }
+            {\textbf{\@charName} --- \textit{aka \@charNickname} --- }
+            (\ifthenelse{\isundefined\@charBirth}{}{\@charBirth} --- %
+            \ifthenelse{\isundefined\@charDeath}{}{\@charDeath}) %
+            \ifthenelse{\isundefined\@charAbstract}{}{\textit{\@charAbstract}} %   
+            \vfill 
+            \includegraphics[width=4cm]{\@charAvatar}
+        \end{multicols}
+
     }
-    
+
+
 }
+
+% Displays keywords
+\newcommand{\keywords}[1]{
+	\textbf{Palavras chaves}: \textit{#1}
+	
+}
+
 
 % Formats a dialogue excert of text, appending the necessary dashes
 % The first parameter -- optional -- indicates the dash position and can be l(eft), r(ight) and b(oth).
