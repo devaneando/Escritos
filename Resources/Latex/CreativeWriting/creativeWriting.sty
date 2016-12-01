@@ -26,13 +26,13 @@
 
 % Allows image insertion
 \usepackage{graphicx,wrapfig}
-\graphicspath{ {Images/} }
+\graphicspath{ {images/} {characters/images/}}
 
 % Defines the character's name
 % \charName{John Somebody Doe}
 \newcommand{\charName}[1]{\def\@charName{#1}}
 
-% Defines the character's short name
+% Defines the character's nickname
 % \charName{John Doe}
 \newcommand{\charNickname}[1]{\def\@charNickname{#1}}
 
@@ -62,8 +62,7 @@
 		{\section*{\@charNickname}}
     % Prints the character's avatar
     \ifthenelse{\isundefined\@charAvatar}{}{
-        \begin{multicols}{2}
-            \be      
+        \begin{multicols}{2}      
             % Prints the abstract
             \ifthenelse{\isundefined\@charNickname}
             {\textbf{\@charName} }
@@ -72,7 +71,7 @@
             \ifthenelse{\isundefined\@charDeath}{}{\@charDeath}) %
             \ifthenelse{\isundefined\@charAbstract}{}{\textit{\@charAbstract}} %   
             \vfill 
-            \includegraphics[width=4cm]{\@charAvatar}
+            \includegraphics[width=5cm]{\@charAvatar}
         \end{multicols}
 
     }

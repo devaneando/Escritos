@@ -27,6 +27,9 @@
 % Better quality fonts for PS generation
 \usepackage{ae,aecompl}
 
+% Allows to use hyperlinks
+\usepackage{hyperref}
+
 % Sets the document to use Latin Modern fonts
 \usepackage{lmodern}
 
