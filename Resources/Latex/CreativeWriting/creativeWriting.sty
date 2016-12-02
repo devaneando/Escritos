@@ -58,8 +58,8 @@
 
 	% Prints the section title
     \ifthenelse{\isundefined\@charNickname}
-		{\section*{\@charName}}
-		{\section*{\@charNickname}}
+		{\chapter{\@charName}}
+		{\chapter{\@charNickname}}
     % Prints the character's avatar
     \ifthenelse{\isundefined\@charAvatar}{}{
         \begin{multicols}{2}      

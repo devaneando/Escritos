@@ -19,7 +19,7 @@
 \ProvidesClass{character}[2016/11/28 Character class]
 
 % Pass options to class
-\LoadClass[12pt,a4paper,oneside]{report}
+\LoadClass[12pt,a4paper,oneside]{book}
 
 % Load the language of the document
 \RequirePackage[portuges, english]{babel}
@@ -51,6 +51,35 @@
 \setlength{\parskip}{0.5cm}
 
 % Sets the page to have only the page number
-\pagestyle{plain}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+
+% Sets a fancy title to the chapters
+\usepackage{microtype}
+\usepackage{fourier}
+\usepackage{cabin}
+
+\definecolor{IndianRed}{RGB}{205,92,92}
+\definecolor{IndianRed1}{RGB}{255,106,106}
+\definecolor{IndianRed2}{RGB}{238,99,99}
+\definecolor{IndianRed3}{RGB}{205,92,92}
+\definecolor{IndianRed4}{RGB}{139,58,58}
+\usepackage{titlesec, blindtext, color}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}
+    [hang]
+    {\Huge\bfseries\color{IndianRed3}}
+    {\textcolor{IndianRed3}\thechapter\hsp\textcolor{IndianRed3}{|}\hsp}
+    {0pt}
+    {\Huge\bfseries}
+\titleformat{\section}
+    [hang]
+    {\normalfont\Large\bfseries\color{IndianRed4}}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\titleformat{\subsection}
+    [hang]
+    {\normalfont\normalsize\bfseries\color{IndianRed2}}{\thesubsection}{1em}{}  
 
 \usepackage{creativeWriting}
