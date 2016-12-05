@@ -4,20 +4,24 @@
 % ██. ██ ▐█▄▄▌ ███ ▐█ ▪▐▌██▐█▌▐█▄▄▌▐█ ▪▐▌██▐█▌██. ██ ▐█▌.▐▌
 % ▀▀▀▀▀•  ▀▀▀ . ▀   ▀  ▀ ▀▀ █▪ ▀▀▀  ▀  ▀ ▀▀ █▪▀▀▀▀▀•  ▀█▄▀▪
 %
-% character.cls
+% characters.cls
 % Copyright 2016 Eduardo Fernandes <edu.fernandes.pt@gmail.com>
 %
+% This is a custom class, based on the creativeWriting class, to allow easy creation
+% of characters.
+% 
 % Licensed under a Creative Commons Attribution 4.0 International License.
 % See https://creativecommons.org/licenses/by/4.0/
 %
 % Example:
-% \documentclass{character}
+% \documentclass{characters}
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{character}[2016/11/28 Character class]
+\ProvidesClass{characters}[2016/11/28 Character class]
 
-% Pass options to class
+% ●▬▬▬▬▬๑۩ Base class ۩๑▬▬▬▬▬●
+
 \LoadClass{creativeWriting}
 
 % Sets the page to have only the page number
@@ -34,5 +38,3 @@
 
 
 
-\newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{IndianRed3}{|}\hsp}{0pt}{\Huge\bfseries}  

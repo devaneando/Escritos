@@ -10,6 +10,15 @@ Excepting the content inside the [Novels](./Novels) folder, everything is covere
 git clone --recursive git@github.com:psicofrenia/Escritos.git Escritos
 ```
 
+## Managing Latex packages
+```
+sudo apt-get install tlmgr xzdec
+tlmgr init-usertree
+tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
+tlmgr update --all
+tlmgr apa6
+```
+
 ## License
 
 [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
