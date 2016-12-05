@@ -29,6 +29,9 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+test.tex
+teste.tex
+lala.tex
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms

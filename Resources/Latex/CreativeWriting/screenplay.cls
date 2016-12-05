@@ -4,35 +4,50 @@
 % ██. ██ ▐█▄▄▌ ███ ▐█ ▪▐▌██▐█▌▐█▄▄▌▐█ ▪▐▌██▐█▌██. ██ ▐█▌.▐▌
 % ▀▀▀▀▀•  ▀▀▀ . ▀   ▀  ▀ ▀▀ █▪ ▀▀▀  ▀  ▀ ▀▀ █▪▀▀▀▀▀•  ▀█▄▀▪
 %
-% character.cls
+% screenplay.cls
 % Copyright 2016 Eduardo Fernandes <edu.fernandes.pt@gmail.com>
 %
 % Licensed under a Creative Commons Attribution 4.0 International License.
 % See https://creativecommons.org/licenses/by/4.0/
 %
 % Example:
-% \documentclass{character}
+% \documentclass{screenplay}
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{character}[2016/11/28 Character class]
+\ProvidesClass{screenplay}[2016/11/28 Character class]
+
+% (¯`·._.··¸.-~*´¨¯¨`*·~-.,-( Page )-,.-~*´¨¯¨`*·~-.¸··._.·´¯)
 
 % Pass options to class
-\LoadClass{creativeWriting}
+\LoadClass[12pt,a4paper,oneside]{book}
+\usepackage{creativeWriting}
 
-% Sets the page to have only the page number
+%Sets single line spacing
+%\usepackage[singlespacing]{setspace}
 
-%\pagestyle{fancy}
-%\fancyhf{}
+% Disables paragraph identation
+\setlength{\parindent}{0cm}
 
-% Changes the titles to e displayed without the name
-%\renewcommand{\chaptermark}[1]{\markright{#1}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\ #1}}
-%\renewcommand{\headrulewidth}{0pt}
-%\fancyhead[LE,RO]{\textsl{\rightmark}}
+% Adds 0.5cm space after paragraph
+\setlength{\parskip}{0.5cm}
 
+% (¯`·._.··¸.-~*´¨¯¨`*·~-.,-( Languages )-,.-~*´¨¯¨`*·~-.¸··._.·´¯)
 
+% Load the language of the document
+\RequirePackage[portuges, english]{babel}
 
-\newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{IndianRed3}{|}\hsp}{0pt}{\Huge\bfseries}  
+% Sets the documento to be UTF8 and allows specials
+% chars (accents) to be used
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[strict]{changepage}
+
+\newenvironment{dialogue}{
+    \begin{center}
+        \begin{minipage}{.8\textwidth} 
+}{
+        \end{minipage}
+    \end{center}   
+}
