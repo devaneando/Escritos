@@ -58,7 +58,6 @@ acs-*.bib
 # Other unwanted files
 *.4ct
 *.4tc
-*.css
 *.idv
 *.lg
 *.tmp
