@@ -89,49 +89,7 @@
 % ---------------------------------------------------------------
 % ---------------- New Commands ---------------------------------
 %
-% Command: dialog
-% Formats a dialogue excert of text, appending the necessary
-% dashes
-%
-% Parameters
-% #1 (Optional): The side where the dash will be appended. The
-% three possible options are: l(eft), r(ight) and b(oth). If this
-% parameter is ommited, left will be assumed.
-%
-% #2: The text to be formatted as a dialog
-\newcommand{\dialog}[2][l]{%
-	\ifstrequal{#1}{r}{\textit{#2} --}%
-	{%
-		\ifstrequal{#1}{b}{-- \textit{#2} --}%
-		{-- \textit{#2}}%
-	}%
-}%
 
-% Command: think
-% Formats a think excert of text, appending the necessary
-% dashes and quotation marks.
-%
-% Parameters
-% #1 (Optional): The side where the dash will be appended. The
-% four possible options are: l(eft), r(ight), b(oth) and none. If
-% parameter is ommited, no dashes will be appended.
-%
-% #2: The text to be formatted as a thinking
-\newcommand{\think}[2][l]{%
-	\ifstrequal{#1}{r}{``\textit{#2}'' --}%
-	{%
-		\ifstrequal{#1}{l}{-- ``\textit{#2}''}%
-		{%
-			\ifstrequal{#1}{b}{-- ``\textit{#2}'' --}%
-			{``\textit{#2}''}%
-		}%
-	}%
-}%
-
-% Command: quotes
-% Formats a quotation excert of text, appending the necessary
-% dashes and quotation marks.
-%
 \newcommand{\stopHere}{%
 	\chapter{\textcolor{red}{----Revise From Here}}
 }%
