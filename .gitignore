@@ -43,7 +43,7 @@ acs-*.bib
 
 # amsthm
 *.thm
-
+*~
 # beamer
 *.nav
 *.snm
